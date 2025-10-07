@@ -6,27 +6,66 @@ body {
 
 #main {
     width: 100vw;
-    height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
 }
 
-#code {
-    width: 100%;
+#textarea {
+    width: 50%;
     height: 10vh;
 }
 
-#result {
+#code {
+    box-sizing: border-box;
     width: 100%;
-    border: 1pt solid green;
+    height: 100%;
+    resize: none;
+    border-radius: 5pt;
+    padding: 1em;
+    border: 0pt;
+    outline: 1px solid gray;
+    transition: outline-color 0.3s ease;
+}
+
+#code:focus {
+    outline: 1px solid black;
+}
+
+#result {
+    width: 50%;
+    border: 1pt solid gray;
+    border-radius: 5pt;
+    /*line-height: 0;*/
 }
 
 table {
+    table-layout: fixed;
     width: 100%;
-    border: 1pt solid black;
-    line-height: 1;
+    border-radius: 5pt;
+    border-collapse: collapse;
+}
+
+td {
+    word-wrap: break-word;
+    vertical-align: top;
+}
+
+pre {
+    padding: 0;
+    margin: 0;
+    white-space: pre-wrap;
 }
 
 table > tr > td:nth-child(1) {
-    width: 2%;
+    width: 2.5em;
+    padding-right: 0.5em;
+    text-align: right;
+}
+
+table > tr > td:nth-child(2) {
+    padding-left: 1em;
+    max-width: 1px;
 }
